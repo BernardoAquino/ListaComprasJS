@@ -16,27 +16,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Lista de Produtos</title>
 </head>
 
 <body>
     <div class="container">
         <h3 class="text-monospace text-center" style="margin-top: 5%">Lista de compras</h3>
         <div class="row" style="margin-top: 5%;">
-            <div class="col-md"><input class="form-control" type="text" placeholder="Digite o item"></div>
-            <div class="col-md"> <button class=" btn btn-primary" btn-lg btn-block">Adicionar</button></div>
+            <div class="col-md">
+                <input id="texto" class="form-control" type="text" placeholder="Digite o item">
+            </div>
+            <div class="col-md">
+                <button id="adicionar" class=" btn btn-primary btn-lg btn-block">Adicionar</button>
+            </div>
         </div>
 
         <div class="row" style="margin-top: 5%">
             <div class="col-md">
-                <table class="table">
+                <table class="table" id="table">
                     <thead>
                         <tr>
                             <th>Nome/Item</th>
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody">
                         <tr>
                             <td>
                                 Teste
