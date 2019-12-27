@@ -16,6 +16,7 @@ function renderItens() {
         var tdElement2 = document.createElement('td');
         var excluirElement = document.createElement('button');
         var buttonText = document.createTextNode('Excluir');
+        excluirElement.setAttribute('class', 'btn btn-danger')
 
         var pos = lista.indexOf(item);
         excluirElement.setAttribute('onclick', 'deleteItem(' + pos + ')');
