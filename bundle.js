@@ -1,7 +1,7 @@
 var tbodyElement = document.getElementById('tbody');
 var buttonAdicionarElement = document.getElementById('adicionar');
 var buttonPesquisarElement = document.getElementById('pesquisar');
-var inputElement = document.getElementById('texto');
+var inputTextElement = document.getElementById('texto');
 var inputQuantidadeElement = document.getElementById('quantidade');
 var lista = JSON.parse(localStorage.getItem('list_itens')) || [];
 var item = {};
@@ -40,9 +40,9 @@ function addItem() {
   tbodyElement.innerHTML = '';
 
   if (lista.length === 0) {
-    if (inputElement.value !== '' && inputQuantidadeElement.value !== '') {
+    if (inputTextElement.value !== '' && inputQuantidadeElement.value !== '') {
       item = {
-        nome: inputElement.value,
+        nome: inputTextElement.value,
         quantidade: inputQuantidadeElement.value
       };
       lista.push(item);
@@ -51,12 +51,12 @@ function addItem() {
     } else {
       tbodyElement.innerHTML = 'Item ou quantidade inválida';
     }
-  } else if (inputElement.value !== '' && inputQuantidadeElement.value !== '') {
-    if (lista.find(item => item.nome === inputElement.value)) {
+  } else if (inputTextElement.value !== '' && inputQuantidadeElement.value !== '') {
+    if (lista.find(item => item.nome === inputTextElement.value)) {
       tbodyElement.innerHTML = 'Item já cadastrado!';
     } else {
       item = {
-        nome: inputElement.value,
+        nome: inputTextElement.value,
         quantidade: inputQuantidadeElement.value
       };
       lista.push(item);
@@ -67,12 +67,12 @@ function addItem() {
     tbodyElement.innerHTML = 'Item ou quantidade inválida';
   }
 
-  inputElement.value = '';
+  inputTextElement.value = '';
   inputQuantidadeElement.value = '';
 }
 
 function deleteItem(pos) {
-  inputElement.value = '';
+  inputTextElement.value = '';
   inputQuantidadeElement.value = '';
   lista.splice(pos, 1);
   renderItens();
@@ -83,7 +83,7 @@ buttonPesquisarElement.onclick = pesquisarItem;
 
 function pesquisarItem() {
   tbodyElement.innerHTML = 'Item não encontrado!';
-  var procura = lista.find(item => item.nome === inputElement.value);
+  var procura = lista.find(item => item.nome === inputTextElement.value);
 
   if (procura !== undefined) {
     tbodyElement.innerHTML = '';
