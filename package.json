@@ -1,0 +1,16 @@
+{
+  "name": "Lista-ComprasJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BernardoAquino/ListaComprasJS.git",
+  "author": "Bernardo Aquino <bernardoaquinoc@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.8.0",
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0"
+  },
+  "scripts": {
+    "dev": "babel ./index.js -o ./bundle.js -w"
+  }
+}
